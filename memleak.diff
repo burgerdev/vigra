@@ -1,0 +1,12 @@
+diff --git a/vigranumpy/src/core/pythonaccumulator.hxx b/vigranumpy/src/core/pythonaccumulator.hxx
+index 558a84b..175f66b 100644
+--- a/vigranumpy/src/core/pythonaccumulator.hxx
++++ b/vigranumpy/src/core/pythonaccumulator.hxx
+@@ -290,6 +290,7 @@ struct PythonFeatureAccumulator
+     virtual python::object get(std::string const & tag) { throw std::runtime_error("abstract function called."); return python::object(); }
+     virtual void merge(PythonFeatureAccumulator const & o) { throw std::runtime_error("abstract function called."); }
+     virtual PythonFeatureAccumulator * create() const { throw std::runtime_error("abstract function called."); return 0; }
++    virtual ~PythonFeatureAccumulator() {}
+     
+     static void definePythonClass()
+     {
